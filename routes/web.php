@@ -20,10 +20,14 @@ Route::post("/logout", "Auth\LoginController@logout")->name("logout");
 
 Route::prefix("painel")->group(function() {
     Route::get('/', 'Admin\HomeController@index')->name('admin');
+    
+    Route::get("/login", "Auth\LoginController@index")->name("login");
+    Route::post("/login", "Auth\LoginController@authenticate");
+    
+    Route::get("/register", "Auth\RegisterController@index")->name("register");
+    Route::post("/register", "Auth\RegisterController@register");
+    
+    Route::resource("users", "Admin\UserController");
 });
 
-Route::get("/login", "Auth\LoginController@index")->name("login");
-Route::post("/login", "Auth\LoginController@authenticate");
-Route::get("/register", "Auth\RegisterController@index")->name("register");
-Route::post("/register", "Auth\RegisterController@register");
 
