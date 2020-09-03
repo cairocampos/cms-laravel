@@ -16,9 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'Site\HomeController@index')->name("site.home");
 Route::post("/logout", "Auth\LoginController@logout")->name("logout");
 
-Auth::routes();
+//Auth::routes();
 
 Route::prefix("painel")->group(function() {
-    Route::get('/', 'Admin\HomeController@index')->name('admin.home');
+    Route::get('/', 'Admin\HomeController@index')->name('admin');
 });
+
+Route::get("/login", "Auth\LoginController@index")->name("login");
+Route::post("/login", "Auth\LoginController@authenticate");
+Route::get("/register", "Auth\RegisterController@index")->name("register");
+Route::post("/register", "Auth\RegisterController@register");
 
