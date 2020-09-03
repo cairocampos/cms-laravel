@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'Site\HomeController@index')->name("site.home");
+Route::post("/logout", "Auth\LoginController@logout")->name("logout");
 
 Auth::routes();
 

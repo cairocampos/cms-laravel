@@ -8,8 +8,3 @@
 @section("content")
     ...
 @endsection
-
-
-@section("css")
-    <link rel="stylesheet" href="/assets/csss/custom.css" />
-@endsection
