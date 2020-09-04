@@ -58,7 +58,7 @@ class LoginController extends Controller
         } 
 
         if(Auth::attempt($data, $remember)) {
-            return redirect()->route("login");
+            return redirect()->route("admin");
         } else {
             $validator->errors()->add("password", "Email e/ou senha inválido(s)!");
             

@@ -21,6 +21,7 @@ Route::post("/logout", "Auth\LoginController@logout")->name("logout");
 Route::prefix("painel")->group(function() {
     Route::get('/', 'Admin\HomeController@index')->name('admin');
     
+    
     Route::get("/login", "Auth\LoginController@index")->name("login");
     Route::post("/login", "Auth\LoginController@authenticate");
     

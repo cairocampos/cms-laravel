@@ -192,9 +192,9 @@ return [
 
     'logout_url' => 'logout',
 
-    'login_url' => 'login',
+    'login_url' => 'painel/login',
 
-    'register_url' => 'register',
+    'register_url' => 'painel/register',
 
     'password_reset_url' => 'password/reset',
 
