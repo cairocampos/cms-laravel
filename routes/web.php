@@ -19,8 +19,7 @@ Route::post("/logout", "Auth\LoginController@logout")->name("logout");
 //Auth::routes();
 
 Route::prefix("painel")->group(function() {
-    Route::get('/', 'Admin\HomeController@index')->name('admin');
-    
+    Route::get('/', 'Admin\HomeController@index')->name('admin');    
     
     Route::get("/login", "Auth\LoginController@index")->name("login");
     Route::post("/login", "Auth\LoginController@authenticate");
@@ -29,6 +28,9 @@ Route::prefix("painel")->group(function() {
     Route::post("/register", "Auth\RegisterController@register");
     
     Route::resource("users", "Admin\UserController");
+
+    Route::get("/profile", "Admin\ProfileController@index")->name("profile");
+    Route::put("/profile", "Admin\ProfileController@update")->name("profile.update");
 });
 
 

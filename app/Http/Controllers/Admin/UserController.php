@@ -11,7 +11,13 @@ use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
-{
+{   
+
+    public function __construct() {
+        $this->middleware("auth");
+        $this->middleware("can:edit-users");
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -175,8 +181,6 @@ class UserController extends Controller
         if($loggedId !== intval($id)) {
             $user = User::find($id)->delete();
         }
-
-        $request->session()->flash("error", "Você não pode excluir a sua conta!");
 
         return redirect()->route("users.index");
     }

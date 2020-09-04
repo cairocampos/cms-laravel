@@ -28,11 +28,15 @@
                             <td>{{$user->email}}</td>
                             <td>
                                 <a href="{{ route('users.edit', ["user" => $user->id]) }}" class="btn btn-sm btn-info">Editar</a>
+                                @if(Auth::id() != $user->id)
                                 <form onsubmit="return confirm('Deseja deletar esse usuário ?');" class="d-inline" method="POST" action="{{route("users.destroy", ["user" => $user->id])}}">
                                     @csrf
                                     @method("DELETE")
                                     <button class="btn btn-sm btn-danger">Excluir</a>
                                 </form>
+                                @else 
+                                    <i class="fas fa-check"></i> Você
+                                @endif
                                 {{-- <a href="{{route("users.destroy", ["user" => $user->id])}}" class="delete__user btn btn-sm btn-danger">Excluir</a> --}}
                             </td>
                         </tr>
