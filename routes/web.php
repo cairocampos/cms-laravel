@@ -28,6 +28,7 @@ Route::prefix("painel")->group(function() {
     Route::post("/register", "Auth\RegisterController@register");
     
     Route::resource("users", "Admin\UserController");
+    Route::resource("pages", "Admin\PageController");
 
     Route::get("/profile", "Admin\ProfileController@index")->name("profile");
     Route::put("/profile", "Admin\ProfileController@update")->name("profile.update");

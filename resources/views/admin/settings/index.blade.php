@@ -54,13 +54,13 @@
                 <div class="form-group row">
                     <label for="bgcolor" class="col-sm-2 col-form-label">Cor do fundo</label>    
                     <div class="col-sm-10">
-                        <input type="color" class="form-control @error('bgcolor') is-invalid @enderror" id="bgcolor" name="bgcolor" value="{{$settings['bgcolor']}}">
+                        <input style="width:50px;" type="color" class="form-control @error('bgcolor') is-invalid @enderror" id="bgcolor" name="bgcolor" value="{{$settings['bgcolor']}}">
                     </div>
                 </div> 
                 <div class="form-group row">
                     <label for="textcolor" class="col-sm-2 col-form-label">Cor do texto</label>    
                     <div class="col-sm-10">
-                        <input type="color" class="form-control @error('textcolor') is-invalid @enderror" id="textcolor" name="textcolor" value="{{$settings['textcolor']}}">
+                        <input style="width:50px;" type="color" class="form-control @error('textcolor') is-invalid @enderror" id="textcolor" name="textcolor" value="{{$settings['textcolor']}}">
                     </div>
                 </div> 
                  
