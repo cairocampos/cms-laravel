@@ -20,6 +20,13 @@
     </div>
 @endif
 
+@if(session("success"))
+<div class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <h5><i class="icon fas fa-check"></i> {{session("success")}}</h5>
+</div>
+@endif
+
 <div class="card">
     <div class="card-body">
         <form action="{{route('settings.update')}}" method="POST" class="form-horizontal">
@@ -29,31 +36,31 @@
                 <div class="form-group row">
                     <label for="title" class="col-sm-2 col-form-label">Titulo do Site</label>    
                     <div class="col-sm-10">
-                        <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title">
+                        <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{$settings['title']}}">
                     </div>
                 </div>  
                 <div class="form-group row">
                     <label for="subtitle" class="col-sm-2 col-form-label">Subtitulo do Site</label>    
                     <div class="col-sm-10">
-                        <input type="text" class="form-control @error('subtitle') is-invalid @enderror" id="subtitle" name="subtitle">
+                        <input type="text" class="form-control @error('subtitle') is-invalid @enderror" id="subtitle" name="subtitle" value="{{$settings['subtitle']}}">
                     </div>
                 </div> 
                 <div class="form-group row">
                     <label for="email" class="col-sm-2 col-form-label">E-mail para contato</label>    
                     <div class="col-sm-10">
-                        <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email">
+                        <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{$settings['email']}}">
                     </div>
                 </div> 
                 <div class="form-group row">
                     <label for="bgcolor" class="col-sm-2 col-form-label">Cor do fundo</label>    
                     <div class="col-sm-10">
-                        <input type="color" class="form-control @error('bgcolor') is-invalid @enderror" id="bgcolor" name="bgcolor">
+                        <input type="color" class="form-control @error('bgcolor') is-invalid @enderror" id="bgcolor" name="bgcolor" value="{{$settings['bgcolor']}}">
                     </div>
                 </div> 
                 <div class="form-group row">
                     <label for="textcolor" class="col-sm-2 col-form-label">Cor do texto</label>    
                     <div class="col-sm-10">
-                        <input type="color" class="form-control @error('textcolor') is-invalid @enderror" id="textcolor" name="textcolor">
+                        <input type="color" class="form-control @error('textcolor') is-invalid @enderror" id="textcolor" name="textcolor" value="{{$settings['textcolor']}}">
                     </div>
                 </div> 
                  
