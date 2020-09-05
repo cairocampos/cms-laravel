@@ -251,12 +251,12 @@ return [
         [
             'text'        => "Configurações do Site",
             'url'         => "painel/settings",
-            'icon'        => "fas fa-fw fa-file",
+            'icon'        => "far fa-fw fa-file",
         ],
         [
             'text'        => "Meu Perfil",
             'url'         => "painel/profile",
-            'icon'        => "fas fa-fw fa-user",
+            'icon'        => "far fa-fw fa-user",
         ]        
     ],
 
