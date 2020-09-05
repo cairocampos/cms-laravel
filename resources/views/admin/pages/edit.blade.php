@@ -44,7 +44,7 @@
                 <div class="form-group row">
                     <label for="body" class="col-sm-2 col-form-label">Corpo</label>
                     <div class="col-sm-10">
-                        <textarea name="body" id="body" cols="30" rows="10" class="form-control">{{$page->body}}</textarea>
+                        <textarea name="body" id="body" cols="30" rows="20" class="form-control bodyfield">{{$page->body}}</textarea>
                     </div>
                 </div>
             </div>
@@ -57,4 +57,20 @@
         </form>
     </div>
 </div>
+@endsection
+
+@section("js")
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: ".bodyfield",
+            menubar:false,
+            plugins: ['link', 'table','image', 'autoresize','lists'],
+            toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft alignright alignjustify | table | link image | bullist numlist',
+             content_css: [
+                 "{{asset('css/content.css')}}"
+             ]
+        });
+    </script>
+
 @endsection
