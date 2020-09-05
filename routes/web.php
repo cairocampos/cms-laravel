@@ -31,6 +31,9 @@ Route::prefix("painel")->group(function() {
 
     Route::get("/profile", "Admin\ProfileController@index")->name("profile");
     Route::put("/profile", "Admin\ProfileController@update")->name("profile.update");
+
+    Route::get("/settings", "Admin\SettingController@index")->name("settings");
+    Route::post("/settings", "Admin\SettingController@update")->name("settings.update");
 });
 
 
