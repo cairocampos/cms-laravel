@@ -35,7 +35,7 @@
               <div class="form-group row">
                   <label for="body" class="col-sm-2 col-form-label">Corpo</label>
                   <div class="col-sm-10">
-                      <textarea cols="30" rows="10" class="form-control @error('body') is-invalid @enderror" name="body" id="body" value="{{ old('body') }}"></textarea>                  
+                      <textarea cols="30" rows="10" class="form-control bodyfield @error('body') is-invalid @enderror" name="body" id="body" value="{{ old('body') }}"></textarea>                  
                 </div>
               </div>
             </div>
@@ -48,4 +48,23 @@
         </form>
     </div>
 </div>
+@endsection
+
+@section("js")
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: ".bodyfield",
+            menubar:false,
+            plugins: ['link', 'table','image', 'autoresize','lists'],
+            toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | table | link image | bullist numlist',
+            content_css: [
+                "{{asset('css/content.css')}}"
+            ],
+            images_upload_url:"{{route('imageupload')}}",
+            images_upload_credentials:true,
+            convert_urls:false
+        });
+    </script>
+
 @endsection

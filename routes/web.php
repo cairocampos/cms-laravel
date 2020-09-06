@@ -37,4 +37,6 @@ Route::prefix("painel")->group(function() {
     Route::put("/settings", "Admin\SettingController@update")->name("settings.update");
 });
 
+Route::fallback('Site\PageController@index');
+
 
